@@ -7,10 +7,16 @@
  *
  */
 
-import React from "react";
+import React, {useEffect} from "react";
 import "../../App.css";
+import { useDispatch } from "react-redux";
+import { getNewsData } from "./actions";
 
 const EducationPage = () => {
+  const dispatch = useDispatch()
+  useEffect(()=>{
+    dispatch(getNewsData('1234'));
+  },[dispatch]);
   return <div>Education Page</div>;
 };
 
